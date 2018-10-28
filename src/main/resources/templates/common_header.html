@@ -60,8 +60,9 @@
                     <!--th:herf="${menu.id}"-->
                     <div th:id="'collapse'+${menu.id}" class="panel-collapse collapse">
                         <ul class="nav newa" role="navigation">
-                            <li th:each="submenu:${menu.children}">
-                                <a href="#" th:id="${submenu.url}" th:text="${submenu.name}"></a>
+                            <li th:each="submenu:${menu.children}" th:switch="${submenu.type}">                           
+                                <a th:case="0" href="#" th:id="${submenu.url}" th:text="${submenu.name}"></a>
+                                <a th:case="1" th:href="${submenu.url}" th:text="${submenu.name}"></a>
                             </li>
 
                         </ul>
