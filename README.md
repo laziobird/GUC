@@ -17,11 +17,11 @@
 ************
 使用方式
 
-1. 下载该demo，git clone https://github.com/vvyun/springboot.git
+1. 下载该demo，git clone https://github.com/laziobird/GUC.git
 
 2. mvn eclipse:eclipse
 
-3. 使用mysql数据库新建系统数据库（sql文件见 (doc/db.sql)，数据库名、数据库用户名、密码自行在application.yml文件内修改）
+3. 使用mysql数据库新建系统数据库（sql文件见 (doc/db.sql)，数据库名、数据库用户名、密码自行在application.yml文件内修改，测试账号 admin/admin
 
 4. 修改maven路径（本地路径，修改conf/settings.xml文件镜像用国内的）
 
