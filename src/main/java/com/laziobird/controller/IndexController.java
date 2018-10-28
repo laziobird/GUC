@@ -1,16 +1,11 @@
 package com.laziobird.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Yunfei
- *
- */
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
 @Controller
 public class IndexController {
 
@@ -18,5 +13,13 @@ public class IndexController {
     public String indexPage() {
         return "index";
     }
+    
+    
+    @RequestMapping("/logout")
+    public String logOut(HttpSession session) {
+        session.invalidate();
+        // remove("user");
+        return "index";
+    }    
 
 }
