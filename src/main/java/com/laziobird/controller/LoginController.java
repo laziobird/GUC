@@ -29,8 +29,6 @@ public class LoginController {
     //登录Controller
     @RequestMapping("/userlogin")
     public String login(@RequestParam String name, String pass, Model m,  HttpSession session){
-//        @SessionAttribute Object usero,
-//        session.getAttribute()
         Object usero = session.getAttribute("user");
         //如果用户登陆过直接进入用户主页
         if(usero!=null){
@@ -38,7 +36,7 @@ public class LoginController {
             m.addAttribute("name",user.getName());
             List<Permission> list = permissionService.findPer(user.getId());
             List<Menu> menus = MenuUtil.permission2Menu(list);
-            m.addAttribute("menus", menus);
+            session.setAttribute("menus", menus);
             return "userhome";
         }
 
@@ -52,7 +50,7 @@ public class LoginController {
             m.addAttribute("name",user.getName());
             List<Permission> list = permissionService.findPer(userId.toString());
             List<Menu> menus = MenuUtil.permission2Menu(list);
-            m.addAttribute("menus", menus);
+            session.setAttribute("menus", menus);
             return "userhome";
         }else if(userId==-1){      //密码错误
             m.addAttribute("name","1");

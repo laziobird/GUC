@@ -20,25 +20,35 @@
     
     	<div th:replace="common_header"></div>
  
-        <div class="col-md-10 column">     
+        <div class="col-md-10 column">  
+               
+	 		<div class="row">
+			  <div class="col-md-10"></div>
+			  <div class="col-md-2"><a class="btn btn-success" href="/permission/toadd" role="button">添加权限</a></div>
+			</div>       
+           
 			<!-- table start -->
             <table class="table table-striped table-condensed">
               <thead>
                 <tr>
+                  <th>Id</th>
                   <th>Name</th>
                   <th>序号</th>
                   <th>权限路径</th>
                   <th>类别</th>
+                  <th>父权限</th>
                   <th>操作</th>
                 </tr>
               </thead>
               <tbody>
                 <tr th:each="one,liststat:${permissionList}">
+                  <td th:text="${one.id}"></td>
                   <td th:text="${one.name}"></td>
 				  <td th:text="${one.sort}"></td>
                   <td th:text="${one.url}"></td>
-				  <td th:text="${one.type}"></td>				  
-                  <td></td>			  
+				  <td th:text="${one.type}"></td>	
+				  <td th:text="${one.pid}"></td>			  
+                  <td><a class="btn btn-danger" href="#" role="button">删除权限</a></td>			  
                 </tr>
               </tbody>
             </table>

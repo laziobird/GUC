@@ -18,9 +18,12 @@ public interface PermissionMapper {
     @Select("SELECT * from table_per WHERE id in (SELECT pid FROM t_role_per where rid in (SELECT rid from t_user_role WHERE uid = #{uid}))")
     public List<Permission> getPerListByUid(String uid);
     //按排序获取所有权限
-    @Select("select * from table_per where status = 1 order by sort")
+    @Select("select * from table_per where status = 1 order by pid,sort")
     List<Permission> getPerListAll();  
     //添加权限
-    @Insert("insert into table_per(name,id,url,type,pid,sort) values(#{name},#{id},#{url},#{type}),#{pid}),#{sort})")
+    @Insert("insert into table_per(name,url,pid,sort) values(#{name},#{url},#{pid},#{sort})")
     int insert(Permission permission);    
+    //pid获取子权限
+    @Select("SELECT * from table_per WHERE pid = #{pid}")
+    public List<Permission> getPerListByPid(String pid);    
 }

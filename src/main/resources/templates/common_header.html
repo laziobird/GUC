@@ -52,8 +52,7 @@
                         </ul>
                     </div>
                 </li>
-
-                <li class="panel panel-default active" th:each="menu:${menus}">
+                <li class="panel panel-default active" th:each="menu:${session.menus}">
                     <a class="dropdown-toggle" data-toggle="collapse" data-parent="#accordion"
                        th:text="${menu.name}" th:href="'#collapse'+${menu.id}">
                     </a>

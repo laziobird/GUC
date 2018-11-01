@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.laziobird.bean.Permission;
 import com.laziobird.bean.PermissionMapper;
-import com.laziobird.bean.User;
+import com.laziobird.urp.Menu;
+import com.laziobird.util.MenuUtil;
 
 /**
  * 
@@ -20,9 +21,13 @@ public class PermissionService {
     @Autowired
     private PermissionMapper permissionMapper;
 
-    public List<Permission> findPer(String id) {
-        return permissionMapper.getPerListByUid(id);
+    public List<Permission> findPer(String uid) {
+        return permissionMapper.getPerListByUid(uid);
     }
+    
+    public List<Permission> getPerListByPid(String pid) {
+        return permissionMapper.getPerListByPid(pid);
+    }    
     
 
     public List<Permission> listAll() {
@@ -38,5 +43,16 @@ public class PermissionService {
        return permissionMapper.insert(permission);
    }    
     
+   /**
+    * 得到所有的权限数
+    * @return
+    */
+   public List<Menu> allMenu(){
+	   List<Permission> list = listAll();
+	   List<Menu> menus = MenuUtil.permission2Menu(list);	
+	   return menus;
+   }
+   
+
     
 }

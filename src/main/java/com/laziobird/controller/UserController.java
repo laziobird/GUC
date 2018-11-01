@@ -1,20 +1,20 @@
 package com.laziobird.controller;
 
-import com.laziobird.bean.User;
-import com.laziobird.service.UserService;
+import java.io.File;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.File;
-import java.util.List;
+import com.laziobird.bean.User;
+import com.laziobird.service.UserService;
 
 /**
- * @author Yunfei
- * User controller
+ * 
+ * @author laziobird
+ *
  */
 @RestController
 public class UserController {
