@@ -39,8 +39,8 @@ public class UserController {
      * @return
      */
     @RequestMapping("/getuser")
-    public User getUserByid(@RequestParam("id") String id) {
-        return userService.getUserById(id);
+    public User getUserByid(@RequestParam("id") String uid) {
+        return userService.getUserById(uid);
     }
 
     /**
