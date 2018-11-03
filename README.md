@@ -32,5 +32,9 @@
 7. 运行成功后访问 [http://localhost:8080/](http://localhost:8080/)  
 
 ************
+控制台
+![image](https://github.com/laziobird/GUC/blob/master/2.jpeg)
 
+Open API接口
+![image](https://github.com/laziobird/GUC/blob/master/1.jpeg)
 
