@@ -12,8 +12,6 @@
 
 - thymeleaf
 
-- lommbok
-
 ************
 使用方式
 
@@ -33,8 +31,10 @@
 
 ************
 控制台
+
 ![image](https://github.com/laziobird/GUC/blob/master/2.jpeg)
 
 Open API接口
+
 ![image](https://github.com/laziobird/GUC/blob/master/1.jpeg)
 
