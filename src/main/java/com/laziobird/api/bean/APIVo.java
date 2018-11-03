@@ -9,7 +9,7 @@ public class APIVo {
 
     private String apiVersion = "v1";
 
-    private String status = "Success";
+    private String status = "success";
 
     private String message;
 

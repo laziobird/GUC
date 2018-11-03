@@ -3,6 +3,7 @@ package com.laziobird.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.laziobird.CommonEnum;
 import com.laziobird.bean.User;
 import com.laziobird.bean.UserMapper;
 
@@ -34,7 +35,31 @@ public class UserService {
     public User getUserById(String id){
         return userMapper.getById(id);
     }
+    
 
+   public int freezeUserById(String uid){
+	   User user = new User();
+	   user.setId(uid);
+	   user.setStatus(CommonEnum.USER_STATUS_FREEZE.getValue());
+       return userMapper.updateStatusById(user);
+   }    
+
+   
+   public int deleteUserById(String uid){
+	   User user = new User();
+	   user.setId(uid);
+	   user.setStatus(CommonEnum.USER_STATUS_DELETE.getValue());
+       return userMapper.updateStatusById(user);
+   }   
+   
+   public int recoverUserById(String uid){
+	   User user = new User();
+	   user.setId(uid);
+	   user.setStatus(CommonEnum.USER_STATUS_OK.getValue());
+       return userMapper.updateStatusById(user);
+   }    
+   
+   
     /**
      *
      * @param name

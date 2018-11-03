@@ -17,7 +17,13 @@ $(document).ready(function(){
             html += '<td>' + obj.name + '</td>';
             html += '<td>' + obj.id + '</td>';
             html += '<td>' + obj.password + '</td>';
-            html += '<td>' + obj.status + '</td>';
+            if(obj.status==1){
+            	html += '<td>正常</td>';
+            }else if(obj.status==0){
+            	html += '<td>冻结</td>';
+            }else if(obj.status==-1){
+            	html += '<td>删除</td>';
+            }            
             html += '</tr>';
         }
         html += '</table>';

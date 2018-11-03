@@ -22,6 +22,8 @@ public interface UserMapper {
     int delete(String id);
     @Update("update table_user set name = #{name} , password = #{password} where id = #{id}")
     int update(User user);
+    @Update("update table_user set status = #{status}  where id = #{id}")
+    int updateStatusById(User user);    
     @Select("select * from table_user where id = #{id}")
     User getById(String id);
     @Select("select * from table_user where name = #{name}")
