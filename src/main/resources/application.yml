@@ -1,12 +1,12 @@
 server:
-  port: 8080
+  port: 80
 #spring.mvc.static-path-pattern=/** # Path pattern used for static resources.
 spring:
     mvc:
       static-path-pattern: /**
     datasource:
         name: test
-        url: jdbc:mysql://127.0.0.1:3306/guc?useUnicode=true&characterEncoding=utf-8
+        url: jdbc:mysql://127.0.0.1:3306/GUC?useUnicode=true&characterEncoding=utf-8
         username: root
         password: 123456
         # druid

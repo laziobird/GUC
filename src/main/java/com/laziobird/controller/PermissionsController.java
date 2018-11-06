@@ -24,7 +24,7 @@ import com.laziobird.service.PermissionService;
  *
  */
 @Controller
-@RequestMapping("/permission")
+@RequestMapping("permission")
 public class PermissionsController {
 
     @Autowired
@@ -34,7 +34,7 @@ public class PermissionsController {
     public String list(HttpServletRequest request,Model model) {
     	List<Permission> list = permissionService.listAll();
 		model.addAttribute("permissionList", list);    	
-        return "/permission/list";
+        return "permission/list";
     }
     @RequestMapping("/add")
     public String changeRole(HttpServletRequest request,Model model,@ModelAttribute Permission permission) {
@@ -46,7 +46,7 @@ public class PermissionsController {
     public String toadd(HttpServletRequest request,Model model) {
     	//暂时只支持一二级菜单
     	model.addAttribute("permissionList", permissionService.allMenu());   
-        return "/permission/toadd";
+        return "permission/toadd";
     }
     
     

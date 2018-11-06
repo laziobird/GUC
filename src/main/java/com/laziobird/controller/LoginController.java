@@ -27,7 +27,7 @@ public class LoginController {
     @Autowired
     private PermissionService permissionService;
     //登录Controller
-    @RequestMapping("/userlogin")
+    @RequestMapping("userlogin")
     public String login(@RequestParam String name, String pass, Model m,  HttpSession session){
         Object usero = session.getAttribute("user");
         //如果用户登陆过直接进入用户主页
@@ -62,7 +62,7 @@ public class LoginController {
     }
 
     //跳转到登录页面
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    @RequestMapping(value = "login",method = RequestMethod.GET)
     public String indexpage(String name,Model model){
         model.addAttribute("name",name);
         return  "login";

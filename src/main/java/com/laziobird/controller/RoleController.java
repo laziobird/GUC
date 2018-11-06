@@ -24,14 +24,14 @@ public class RoleController {
 
     @RequestMapping("/role")
     public String toRoleHtml() {
-        return "/role/Role";
+        return "role/Role";
     }
     @RequestMapping("/role/changerole")
     public String changeRole(Model m, @RequestParam String uid) {
         List<Role> roles = roleService.getRoles(uid);
         m.addAttribute("roles",roles);
         m.addAttribute("changid",uid);
-        return "/role/changerole";
+        return "role/changerole";
     }
     @RequestMapping("/role/change")
     public String reRole(@RequestParam String uid,String rid){
@@ -40,9 +40,9 @@ public class RoleController {
         userRole.setRid(Integer.parseInt(rid));
         userRole.setUid(Integer.parseInt(uid));
         if (roleService.changeRole(userRole)>0){
-            return "/role/success";
+            return "role/success";
         }
-        return "/role/error";
+        return "role/error";
     }
 
 }
