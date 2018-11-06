@@ -38,3 +38,7 @@ Open API接口
 
 ![image](https://github.com/laziobird/GUC/blob/master/1.jpeg)
 
+************
+
+在线预览地址 [http://birdboy.cn/](http://birdboy.cn/)  
+
