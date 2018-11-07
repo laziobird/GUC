@@ -16,7 +16,7 @@ public interface PermissionMapper {
 
     //获取用户权限
     @Select("SELECT * from table_per WHERE id in (SELECT pid FROM t_role_per where rid in (SELECT rid from t_user_role WHERE uid = #{uid}))")
-    public List<Permission> getPerListByUid(String uid);
+    public List<Permission> getPerListByUid(Integer uid);
     //按排序获取所有权限
     @Select("select * from table_per where status = 1 order by pid,sort")
     List<Permission> getPerListAll();  

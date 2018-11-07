@@ -18,6 +18,10 @@ public interface UserMapper {
     List<User> showAll();
     @Insert("insert into table_user(name,id,password,status) values(#{name},#{id},#{password},#{status})")
     int insert(User user);
+    
+    @Insert("insert into table_user(name,id,password,status,phone,email) values(#{name},#{id},#{password},#{status},#{phone},#{email})")
+    int insertAll(User user);    
+    
     @Delete("delete from table_user where id = #{id}")
     int delete(String id);
     @Update("update table_user set name = #{name} , password = #{password} where id = #{id}")
@@ -28,4 +32,8 @@ public interface UserMapper {
     User getById(String id);
     @Select("select * from table_user where name = #{name}")
     User getByName(String name);    
+    
+    
+    @Select("select count(1) from table_user where name = #{name}")
+    int countByName(String name);     
 }

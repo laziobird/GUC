@@ -67,7 +67,7 @@ public class APIController {
     @ApiOperation(value="冻结用户", notes="用户被冻结，只能登录没有权限")
     @ApiImplicitParam(name = "uid", value = "用户ID", required = true, dataType = "String", paramType="path")    
     @RequestMapping(value = "/freezeUser/{uid}",method = RequestMethod.POST)
-    public APIVo freezeUser(@PathVariable String uid) {
+    public APIVo freezeUser(@PathVariable Integer uid) {
     	APIVo apiVo = new APIVo();
     	int re = userService.freezeUserById(uid);
     	if(re==1){
@@ -87,7 +87,7 @@ public class APIController {
     @ApiOperation(value="删除用户", notes="用户被删除，不能恢复")
     @ApiImplicitParam(name = "uid", value = "用户ID", required = true, dataType = "String", paramType="path")    
     @RequestMapping(value = "/delUser/{uid}",method = RequestMethod.POST)
-    public APIVo delUser(@PathVariable String uid) {
+    public APIVo delUser(@PathVariable Integer uid) {
     	APIVo apiVo = new APIVo();
     	int re = userService.deleteUserById(uid);
     	if(re==1){
@@ -107,7 +107,7 @@ public class APIController {
     @ApiOperation(value="恢复用户", notes="用户被冻结，被恢复")
     @ApiImplicitParam(name = "uid", value = "用户ID", required = true, dataType = "String", paramType="path")    
     @RequestMapping(value = "/recoverUser/{uid}",method = RequestMethod.POST)
-    public APIVo recoverUser(@PathVariable String uid) {
+    public APIVo recoverUser(@PathVariable Integer uid) {
     	APIVo apiVo = new APIVo();
     	int re = userService.recoverUserById(uid);
     	if(re==1){

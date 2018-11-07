@@ -48,7 +48,7 @@ public class LoginController {
         if (userId>0){          //登录成功
             session.setAttribute("user",user);
             m.addAttribute("name",user.getName());
-            List<Permission> list = permissionService.findPer(userId.toString());
+            List<Permission> list = permissionService.findPer(userId);
             List<Menu> menus = MenuUtil.permission2Menu(list);
             session.setAttribute("menus", menus);
             return "userhome";

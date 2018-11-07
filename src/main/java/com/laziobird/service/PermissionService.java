@@ -21,7 +21,7 @@ public class PermissionService {
     @Autowired
     private PermissionMapper permissionMapper;
 
-    public List<Permission> findPer(String uid) {
+    public List<Permission> findPer(Integer uid) {
         return permissionMapper.getPerListByUid(uid);
     }
     

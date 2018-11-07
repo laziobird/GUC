@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>用户注册</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+	<link href="https://cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.css" rel="stylesheet"/>    
+    
+	<script src="https://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>   
+	 
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"><span
+                            class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="/">首页</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/login">登录</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li class="">
+                            <a href="/regist">注册</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">作者<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#" style="text-align:center">我的github</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+        <div class="col-md-2 column"></div>
+        <div class="col-md-8 column">
+            <div class="well">
+                <h3 style="text-align: center">
+                    用户注册
+                </h3>
+                <div th:switch="${code}" style="margin-left: 50px;color: red">
+                    <p th:case="'1'">恭喜，注册成功，等待管理员审核!</p>
+                    <p th:case="'-1'">用户名被占用</p>
+                    <p th:case="*">系统异常，联系管理员!</p>
+                </div>
+                <form class="form-horizontal" role="form" action="/registUser" method="post">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">账号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="in1" name="uname" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="in2" name="pass" />
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">邮箱</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="in3" name="email" placeholder="Email" />
+                        </div>
+                    </div>                    
+                    
+                    
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">电话</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="in4" name="phone" placeholder="请输入电话"/>
+                        </div>
+                    </div>                        
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">注册</button>
+                        </div>
+                    </div>
+                    
+                </form>
+
+            </div>
+        </div>
+        <div class="col-md-2 column"></div>
+    </div>
+</div>
+<script src="/js/registUser.js" type="text/javascript"></script>
+</body>
+</html>
