@@ -1,4 +1,4 @@
-# GUC 通用用户中心系统
+# GUC 通用用户中心系统: User Account and Authentication (UAA) Server
 
 
 ************
