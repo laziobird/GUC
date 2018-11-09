@@ -1,10 +1,10 @@
 # GUC 通用用户中心系统: User Account and Authentication (UAA) Server
 
-
+基于Spring Cloud 高可用微服务
 ************
-使用 spring boot 创建web application,使用了如下框架
+使用了如下框架
 
-- spring boot
+- spring boot 、spring security 、 spring cloud
 
 - spring mvc
 
