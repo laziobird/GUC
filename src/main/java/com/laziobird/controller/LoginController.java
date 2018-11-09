@@ -67,5 +67,11 @@ public class LoginController {
         model.addAttribute("name",name);
         return  "login";
     }
+    
+    //跳转到登录页面
+    @RequestMapping(value = "userHome",method = RequestMethod.GET)
+    public String userHome(){
+        return  "userhome";
+    }   
 
 }

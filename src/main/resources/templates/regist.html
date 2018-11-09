@@ -60,6 +60,7 @@
                 <div th:switch="${code}" style="margin-left: 50px;color: red">
                     <p th:case="'1'">恭喜，注册成功，等待管理员审核!</p>
                     <p th:case="'-1'">用户名被占用</p>
+                    <p th:case="0"></p>
                     <p th:case="*">系统异常，联系管理员!</p>
                 </div>
                 <form class="form-horizontal" role="form" action="/registUser" method="post">

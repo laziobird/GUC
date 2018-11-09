@@ -57,7 +57,8 @@ public class UserFrontController {
 	 * @return
 	 */
 	@RequestMapping("/toRegistUser")
-	public String toRegistUser() {
+	public String toRegistUser(Model m) {
+		m.addAttribute("code", 0);
 		return "regist";
 	}
 }

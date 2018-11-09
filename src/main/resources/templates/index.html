@@ -21,16 +21,31 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
+                
+                
+                    <ul th:if="${session.user}==null"  class="nav navbar-nav">
                         <li class="">
                             <a href="/login">登录</a>
                         </li>
                     </ul>
-                    <ul class="nav navbar-nav">
+                    <ul th:if="${session.user}==null" class="nav navbar-nav">
                         <li class="">
                             <a href="/toRegistUser">注册</a>
                         </li>
                     </ul>
+                    
+                    <ul th:unless="${session.user}==null"  class="nav navbar-nav">
+                        <li class="">
+                            <a href="/userHome">管理后台</a>
+                        </li>
+                    </ul>                    
+                    
+                     <ul th:unless="${session.user}==null"  class="nav navbar-nav">
+                        <li class="">
+                            <a href="/logout">注销</a>
+                        </li>
+                    </ul>      
+                                       
                     <ul class="nav navbar-nav navbar-right">
 
                         <li class="dropdown">
