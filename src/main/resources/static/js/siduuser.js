@@ -3,7 +3,7 @@ $(document).ready(function(){
     //所有用户
     $("#getAll").click(function(){
         $('#uploadimg').hide();
-        htmlobj=$.ajax({url:"/alluser",async:false});
+        htmlobj=$.ajax({url:"/user/alluser",async:false});
         /*[{"name":"1321","id":"123","password":"214214124","status":13},{"name":"1213","id":"124","password":"2435325","status":11}]*/
         var jsonData = htmlobj.responseText;
         jsonData = JSON.parse(jsonData); //将json字符串转换成json对象
@@ -115,7 +115,7 @@ function addAUser() {
         //几个参数需要注意一下
         type: "POST",//方法类型
         dataType: "json",//预期服务器返回的数据类型
-        url: "/addUser" ,//url
+        url: "/user/addUser" ,//url
         data: $('#formadduser').serialize(),
         success: function (result) {
             //console.log(result);//打印服务端返回的数据(调试用)
@@ -136,7 +136,7 @@ function delUser() {
         //几个参数需要注意一下
         type: "POST",//方法类型
         dataType: "json",//预期服务器返回的数据类型
-        url: "/delUser" ,//url
+        url: "/user/delUser" ,//url
         data: $('#formdeluser').serialize(),
         success: function (result) {
             //console.log(result);//打印服务端返回的数据(调试用)
@@ -158,7 +158,7 @@ function upAUser() {
         //几个参数需要注意一下
         type: "POST",//方法类型
         dataType: "json",//预期服务器返回的数据类型
-        url: "/updateUser" ,//url
+        url: "/user/updateUser" ,//url
         data: $('#formupuser').serialize(),
         success: function (result) {
             //console.log(result);//打印服务端返回的数据(调试用)
@@ -166,6 +166,8 @@ function upAUser() {
                 var html = "<h1> 更新成功 </h1>";
                 $("#usercontent").html(html);
                 // alert("SUCCESS");
+            }else {
+            	alert("更新失败！");
             };
         },
         error : function() {

@@ -15,7 +15,7 @@ public class IndexController {
     }
     
     
-    @RequestMapping("logout")
+    @RequestMapping("/back/logout")
     public String logOut(HttpSession session) {
         session.invalidate();
         // remove("user");

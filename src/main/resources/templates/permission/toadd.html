@@ -21,38 +21,38 @@
     	<div th:replace="common_header"></div>
  
         <div class="col-md-10 column">  
-               
-			<form action="/permission/add">
-			  <div class="form-group">
-			    <label for="pname">权限名称</label>
-			    <input type="text" class="form-control" id="name" name="name" placeholder="不超过十个字"></input>
-			  </div>
-			  <div class="form-group">
-			    <label for="purl">权限地址</label>
-			    <input type="text" class="form-control" id="url" name="url" placeholder="输入访问路径"></input>
-			  </div>
-			  
-
-			  			  
-			  <div class="form-group">
-			    <label for="pid">父权限</label>
-				<select name="pid_0" id="pid_0" title="根权限" onchange="getPList()">
-					<option value="0">无父权限</option>
-					<option th:each="permission:${permissionList}" th:value="${permission.id}" th:text="${permission.name}"></option>	
-				</select>
-				<select name="pid" id="pid" title="一级权限">
-					<option value="0">空</option>
-				</select>		    
-			  </div>
-			  
-			  <div class="form-group">
-			    <label for="purl">排序</label>
-			    <input type="text" class="form-control" id="sort" name="sort" placeholder="排序" value="1"></input>
-			  </div>			  
-			  
-			  <button type="submit" class="btn btn-default">添加</button>
-			</form>      
-
+			<div class="" id="usercontent">               
+				<form action="/permission/add">
+				  <div class="form-group">
+				    <label for="pname">权限名称</label>
+				    <input type="text" class="form-control" id="name" name="name" placeholder="不超过十个字"></input>
+				  </div>
+				  <div class="form-group">
+				    <label for="purl">权限地址</label>
+				    <input type="text" class="form-control" id="url" name="url" placeholder="输入访问路径"></input>
+				  </div>
+				  
+	
+				  			  
+				  <div class="form-group">
+				    <label for="pid">父权限</label>
+					<select name="pid_0" id="pid_0" title="根权限" onchange="getPList()">
+						<option value="0">无父权限</option>
+						<option th:each="permission:${permissionList}" th:value="${permission.id}" th:text="${permission.name}"></option>	
+					</select>
+					<select name="pid" id="pid" title="一级权限">
+						<option value="0">空</option>
+					</select>		    
+				  </div>
+				  
+				  <div class="form-group">
+				    <label for="purl">排序</label>
+				    <input type="text" class="form-control" id="sort" name="sort" placeholder="排序" value="1"></input>
+				  </div>			  
+				  
+				  <button type="submit" class="btn btn-default">添加</button>
+				</form>      
+			</div>
         </div>
     </div>  
         

@@ -19,6 +19,7 @@ import java.util.List;
 
 
 @Controller
+@RequestMapping("back")
 public class LoginController {
 
     User user = new User();

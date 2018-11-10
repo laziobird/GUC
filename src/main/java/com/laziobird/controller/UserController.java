@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.laziobird.CommonEnum;
 import com.laziobird.bean.User;
 import com.laziobird.service.UserService;
 
@@ -17,6 +18,7 @@ import com.laziobird.service.UserService;
  *
  */
 @RestController
+@RequestMapping("user")
 public class UserController {
 
 	@Autowired
@@ -77,7 +79,9 @@ public class UserController {
 	 */
 	@RequestMapping("/updateUser")
 	public int updateUser(@RequestParam Integer id, String name, String pass) {
-		return userService.updateUser(new User(name, pass, 1));
+		User user = new User(name, pass, CommonEnum.USER_STATUS_FREEZE.getValue());
+		user.setId(id);
+		return userService.updateUser(user);
 	}
 
 	/**

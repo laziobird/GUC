@@ -17,6 +17,7 @@ import com.laziobird.service.UserService;
  *
  */
 @Controller
+@RequestMapping("front")
 public class UserFrontController {
 
 	@Autowired
@@ -61,4 +62,26 @@ public class UserFrontController {
 		m.addAttribute("code", 0);
 		return "regist";
 	}
+	
+	/**
+	 * 作者介绍
+	 * @param m
+	 * @return
+	 */
+	@RequestMapping("/about")
+	public String about(Model m) {
+		return "about";
+	}	
+	
+	/**
+	 * 
+	 * @param m
+	 * @return
+	 */
+	@RequestMapping("/help/userAPI")
+	public String userAPI(Model m) {
+		return "help/userAPI";
+	}		
+	
+	
 }

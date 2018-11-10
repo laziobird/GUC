@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>作者介绍</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"><span
+                            class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="/">GUC</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                
+                    <ul th:if="${session.user}==null"  class="nav navbar-nav">
+                        <li class="">
+                            <a href="/back/login">登录</a>
+                        </li>
+                    </ul>
+                    <ul th:if="${session.user}==null" class="nav navbar-nav">
+                        <li class="">
+                            <a href="/front/toRegistUser">注册</a>
+                        </li>
+                    </ul>
+                    
+                    <ul th:unless="${session.user}==null"  class="nav navbar-nav">
+                        <li class="">
+                            <a href="/back/userHome">管理后台</a>
+                        </li>
+                    </ul>                    
+                    
+                     <ul th:unless="${session.user}==null"  class="nav navbar-nav">
+                        <li class="">
+                            <a href="/back/logout">注销</a>
+                        </li>
+                    </ul>      
+                                       
+                </div>
+
+            </nav>
+            <div class="jumbotron">
+                <h3>作者介绍</h3>
+                <p></p>
+                <p>蒋志伟</p>
+	        	<p>北京交通大学计算机硕士。先后就职于阿里、Qunar、美团。美团架构师、Qunar技术专家。曾负责多个上亿系统底层研发，专注于微服务、区块链的研究</p>
+                <p>连续创业：约运动CEO，时速云微服务负责人</p>
+                <p>微信公众号：[LightningNetwork] 闪电网络、区块链、比特币技术分享，探索闪电网络应用，普及区块链技术</p>
+                <p>联系方式：微信 nizhanali，邮箱 laziobird@gmail.com</p>
+                <p>
+                    <a  target="_blank" href="https://mp.weixin.qq.com/s?__biz=MzI4MTY5NTk4Ng==&amp;mid=2247489430&amp;idx=1&amp;sn=d28a8c24a4fd07f8f0066944480a449b">Qunar搜索系统的高并发架构设计</a>
+                </p> 
+                <p>
+                    <a  target="_blank" href="https://mp.weixin.qq.com/s?__biz=MzI4MTY5NTk4Ng==&amp;mid=2247489381&amp;idx=1&amp;sn=df8ea7166bfad311c7f26690b829bcbd">聊聊基于Luence的搜索技术核心实践</a>
+                </p>                                                
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

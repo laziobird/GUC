@@ -25,34 +25,34 @@
                 
                     <ul th:if="${session.user}==null"  class="nav navbar-nav">
                         <li class="">
-                            <a href="/login">登录</a>
+                            <a href="/back/login">登录</a>
                         </li>
                     </ul>
                     <ul th:if="${session.user}==null" class="nav navbar-nav">
                         <li class="">
-                            <a href="/toRegistUser">注册</a>
+                            <a href="/front/toRegistUser">注册</a>
                         </li>
                     </ul>
                     
                     <ul th:unless="${session.user}==null"  class="nav navbar-nav">
                         <li class="">
-                            <a href="/userHome">管理后台</a>
+                            <a href="/back/userHome">管理后台</a>
                         </li>
                     </ul>                    
                     
                      <ul th:unless="${session.user}==null"  class="nav navbar-nav">
                         <li class="">
-                            <a href="/logout">注销</a>
+                            <a href="/back/logout">注销</a>
                         </li>
                     </ul>      
-                                       
+        
                     <ul class="nav navbar-nav navbar-right">
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">作者<strong class="caret"></strong></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="#" style="text-align:center">我的github</a>
+                                    <a href="/front/about" style="text-align:center">个人介绍</a>
                                 </li>
                             </ul>
                         </li>
@@ -62,16 +62,24 @@
             </nav>
             <div class="jumbotron">
                 <h2>
-                    GUC 通用用户中心系统
+                    GUC: 通用用户中心系统
                 </h2>
+                <p>  </p>
+                <p>  </p>
                 <p>
-                    GUC提供用户授权、用户认证一整套解决方案。                 
+                    * GUC: 简称General User Center，它是基于SpringCloud实现的一种微服务             
+                </p>                
+                <p>
+                    * GUC为不同客户提供了系统授权、用户认证UAA一整套服务解决方案            
                 </p>
                 <p>
-                    GUC是一个单独服务，它可以很方便在私有云和公有云环境部署。它的RESTFul API可以在PC、APP方便调用、扩展                 
+                    * UAA: User Account and Authentication                
+                </p>                
+                <p>
+                    * GUC是一个独立的微服务，可以方便在私有云和公有云环境部署。它丰富的RESTFul API可以在IT系统、移动APP程序方便调用、扩展                 
                 </p>
                 <p>
-                    <a class="btn btn-primary btn-large" href="https://spring.io/">Spring官网</a>
+                    <a class="btn btn-success btn-large" href="/back/login">登录体验</a>
                 </p>
             </div>
         </div>
@@ -79,12 +87,12 @@
     <div class="row clearfix">
         <div class="col-md-4 column">
             <h2>
-                通用、丰富的Open API
+                丰富的OpenAPI
             </h2>
-            <p>你可以方便的通过HTTP Restful API 调用服务，API访问采用JWT认证授权</p>
-            <p>采用常用Authorization方式认证</p>
+            <p>你可以方便的通过HTTP Restful API调用服务，API访问采用JWT认证授权。</p>
+            <p>最常用Authorization方式认证。</p>
             <p>
-                <a class="btn" href="/swagger-ui.html">View details »</a>
+                <a class="btn" href="/swagger-ui.html">使用说明 »</a>
             </p>
         </div>
         <div class="col-md-4 column">
@@ -92,21 +100,21 @@
                 Spring Cloud
             </h2>
             <p>
-                分布式微服务，更更高用、支持分布式部署。                  
+                Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems (e.g. configuration management, service discovery, intelligent routing, micro-proxy, one-time tokens, leadership election, distributed sessions, cluster state).分布式微服务，高可用、支持分布式部署                  
             </p>
             <p>
-                <a class="btn" href="http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html">View details »</a>
+                <a class="btn" href="https://spring.io/projects/spring-cloud">View details »</a>
             </p>
         </div>
         <div class="col-md-4 column">
             <h2>
-                采用JWT
+                流行的JWT
             </h2>
             <p>
-                支持最通用的基于JWT认证授权，JSON Web Token（缩写 JWT）是目前最流行的跨域认证解决方案、OAuth2 认证授权
+                支持最通用的基于JWT认证授权，JSON Web Token（缩写 JWT）是目前最流行的跨域认证解决方案、OAuth2 认证授权。
             </p>
             <p>
-                <a class="btn" href="#">View details »</a>
+                <a class="btn" href="/front/help/userAPI">原理机制 »</a>
             </p>
         </div>
     </div>

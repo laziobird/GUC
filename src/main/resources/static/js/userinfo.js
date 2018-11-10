@@ -66,12 +66,12 @@ function repass(){
             //几个参数需要注意一下
             type: "POST",//方法类型
             dataType: "json",//预期服务器返回的数据类型
-            url: "/repass" ,//url
+            url: "/user/repass" ,//url
             data: $('#formrepass').serialize(),
             success: function (result) {
                 //console.log(result);//打印服务端返回的数据(调试用)
                 if (result==1){
-                    var html = "<h1> 修改成功 </h1>";
+                    var html = "<h3> 修改成功 </h3>";
                     $("#usercontent").html(html);
                     // alert("SUCCESS");
                 };
