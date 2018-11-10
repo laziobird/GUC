@@ -26,8 +26,8 @@ public class Swagger2 {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("GUC用户权限开放平台")
-                .description("用户中心API")
+                .title("GUC用户中心开放平台")
+                .description("用户中心API:API通过JWT访问授权，具体设置请查看帮助中心 http://birdboy.cn/front/help/userAPI")
                 .termsOfServiceUrl("http://birdboy.cn")
                 .contact("laziobird@gmail.com")
                 .version("1.0")

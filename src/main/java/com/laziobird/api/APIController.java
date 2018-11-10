@@ -9,16 +9,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.laziobird.CommonEnum;
 import com.laziobird.api.bean.APIVo;
 import com.laziobird.bean.Permission;
+import com.laziobird.bean.User;
 import com.laziobird.service.PermissionService;
 import com.laziobird.service.UserService;
 
 import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 /**
  * 
@@ -120,6 +125,32 @@ public class APIController {
 			apiVo.setMessage("不存在该Uid：[" + uid + "]的记录！");
 		}
 		return apiVo;
+	}
+
+	@ApiOperation(value = "注册用户", notes = "调用GUC注册新用户")
+	@ApiResponses({ @ApiResponse(code = 403, message = "权限不足") })	
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "uname", value = "用户名", required = true, dataType = "String", paramType = "path"),
+			@ApiImplicitParam(name = "pass", value = "用户密码", required = true, dataType = "String", paramType = "path"),
+			@ApiImplicitParam(name = "email", value = "用户注册邮箱", required = false, dataType = "String", paramType = "path"),
+			@ApiImplicitParam(name = "phone", value = "用户注册手机号", required = false, dataType = "String", paramType = "path") })
+	@RequestMapping(value = "/registUser", method = RequestMethod.POST)
+	public APIVo recoverUser(String pass, String uname, @RequestParam(name = "phone", required = false) String phone,
+			@RequestParam(name = "email", required = false) String email) {
+		APIVo apiVo = new APIVo();
+		if (userService.hasSameName(uname)) {
+			apiVo.setStatus(CommonEnum.USER_REGIST_DUPLICATE.getKey());
+		} else {
+			//默认用户注册成功冻结状态
+			int ok = userService
+					.registUser(new User(uname, pass, CommonEnum.USER_STATUS_FREEZE.getValue(), phone, email));
+			if (ok == 1) {
+				apiVo.setStatus(CommonEnum.USER_REGIST_SUCCESS.getKey());
+			} else {
+				apiVo.setStatus(CommonEnum.USER_REGIST_FAIL.getKey());
+			}
+		}
+		return apiVo;		
 	}
 
 }
