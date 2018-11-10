@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 80
 #spring.mvc.static-path-pattern=/** # Path pattern used for static resources.
 spring:
     mvc:

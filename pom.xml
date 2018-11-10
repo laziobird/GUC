@@ -82,9 +82,11 @@
 		    <artifactId>jjwt</artifactId>
 		    <version>0.8.0</version>
 		</dependency>	
-
-			
-		
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20160810</version>
+		</dependency>			
 	</dependencies>
 
 	<build>
