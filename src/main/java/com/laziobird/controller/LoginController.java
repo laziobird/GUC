@@ -75,4 +75,12 @@ public class LoginController {
         return  "userhome";
     }   
 
+    
+    @RequestMapping("logout")
+    public String logOut(HttpSession session) {
+        session.invalidate();
+        // remove("user");
+        return "index";
+    }      
+    
 }

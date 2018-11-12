@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.laziobird.CommonEnum;
 import com.laziobird.bean.User;
+import com.laziobird.bean.UserVo;
 import com.laziobird.service.UserService;
 
 /**
@@ -30,7 +31,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping("/alluser")
-	public List<User> listAll() {
+	public List<UserVo> listAll() {
 		return userService.listAll();
 	}
 

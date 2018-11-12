@@ -13,7 +13,18 @@ public enum CommonEnum {
 	
 	USER_STATUS_OK("用户正常", 1, "用户状态"), 
 	USER_STATUS_FREEZE("用户冻结", 0, "可以登录没有权限"), 
-	USER_STATUS_DELETE("用户删除", -1,"删除不能恢复");
+	USER_STATUS_DELETE("用户删除", -1,"删除不能恢复"),
+	
+	
+	
+	APP_STATUS_OK("系统正常", 1, "系统状态"), 
+	APP_STATUS_FREEZE("系统冻结", 0, "系统状态"), 
+	APP_STATUS_DELETE("系统删除", -1,"系统状态"),	
+	
+	APP_UPDATE_SUCCESS("系统更新成功", 1, "系统状态"), 
+	APP_UPDATE_FAIL("系统更新失败", -1, "系统状态"), 	
+	
+	;
 
 	private String key;
 	private int value;

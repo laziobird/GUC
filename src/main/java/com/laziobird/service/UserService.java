@@ -1,5 +1,7 @@
 package com.laziobird.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.util.StringUtils;
@@ -7,8 +9,7 @@ import org.thymeleaf.util.StringUtils;
 import com.laziobird.CommonEnum;
 import com.laziobird.bean.User;
 import com.laziobird.bean.UserMapper;
-
-import java.util.List;
+import com.laziobird.bean.UserVo;
 
 /**
  *
@@ -23,8 +24,8 @@ public class UserService {
 	/**
 	 * @return allUsers
 	 */
-	public List<User> listAll() {
-		return userMapper.showAll();
+	public List<UserVo> listAll() {
+		return userMapper.showAllAndRole();
 	}
 
 	/**

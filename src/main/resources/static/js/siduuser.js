@@ -9,7 +9,7 @@ $(document).ready(function(){
         jsonData = JSON.parse(jsonData); //将json字符串转换成json对象
         // alert(jsonData)
         var html = '<table class="table table-striped"><thead>'+'<tr>'+'<th>'+'姓名'+'</th>'+'<th>'+
-            ' I D '+'</th>'+'<th>'+' 密码 '+'</th>'+'<th>'+' 状态 '+'</th>'+'</tr>'+'</thead>';
+            ' I D '+'</th>'+'<th>'+' 密码 '+'</th>'+'<th>'+' 角色 '+'</th>'+'<th>'+' 角色id '+'</th>'+'<th>'+' 状态 '+'</th>'+'<th>'+' 操作 '+'</th>'+'</tr>'+'</thead>';
         for (var j in jsonData) {
             var obj = jsonData[j];
             // alert(obj)
@@ -17,10 +17,14 @@ $(document).ready(function(){
             html += '<td>' + obj.name + '</td>';
             html += '<td>' + obj.id + '</td>';
             html += '<td>' + obj.password + '</td>';
+            html += '<td>' + obj.roleName + '</td>';
+            html += '<td>' + obj.roleId + '</td>';
             if(obj.status==1){
             	html += '<td>正常</td>';
+            	html += '<td><a class="btn btn-danger" herf="">冻结</a>|<a class="btn btn-danger" herf="">删除</a></td>';
             }else if(obj.status==0){
             	html += '<td>冻结</td>';
+            	html += '<td><a class="btn btn-danger" herf="">解冻</a></td>';
             }else if(obj.status==-1){
             	html += '<td>删除</td>';
             }            

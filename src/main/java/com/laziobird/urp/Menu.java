@@ -58,4 +58,11 @@ public class Menu  implements Comparable<Menu>{
 	public int compareTo(Menu o) {
 		return this.sort-o.getSort();
 	}
+	@Override
+	public String toString() {
+		return "Menu [id=" + id + ", name=" + name + ", type=" + type + ", url=" + url + ", sort=" + sort + ", pid="
+				+ pid + ", children=" + children + "]";
+	}
+	
+	
 }

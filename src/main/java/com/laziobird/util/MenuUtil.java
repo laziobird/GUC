@@ -29,7 +29,7 @@ public class MenuUtil {
 				}
 			} 
 		} catch (Exception e) {
-			System.out.println("error");
+			System.out.println("error:"+e);
 		}
 
 		try {
@@ -43,14 +43,12 @@ public class MenuUtil {
 					menu.setSort(p.getSort());
 					menu.setType(p.getType());
 					menu.setUrl(p.getUrl());
-
 					Menu pmenu = map.get(p.getPid());
-
 					pmenu.getChildren().add(menu);
 				}
 			} 
 		} catch (Exception e) {
-			System.out.println("error");
+			System.out.println("error:"+e);
 		}
 		return map2menu(map);
 	}
@@ -66,6 +64,7 @@ public class MenuUtil {
 		}
 
 		Collections.sort(list);
+		System.out.println(" 菜单:"+list.toString());
 		return list;
 	}
 

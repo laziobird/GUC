@@ -26,12 +26,13 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				// 对请求进行认证
 				.authorizeRequests()
 				// 所有/的所有请求 都放行
-				.antMatchers("/").permitAll().antMatchers("/permission/**").permitAll().antMatchers("/role/**").permitAll().antMatchers("/user/**")
-				.permitAll().antMatchers("/swagger-ui**").permitAll().antMatchers("/back/**").permitAll()
-				.antMatchers("/front/**").permitAll().antMatchers("/js/**").permitAll().antMatchers("/css/**")
-				//兼容swagger
-				.permitAll().antMatchers("/webjars/**").permitAll().antMatchers("/swagger-resources").permitAll().antMatchers("/images/**").permitAll()
-				.antMatchers("/v2/api-docs").permitAll()
+				.antMatchers("/").permitAll().antMatchers("/permission/**").permitAll().antMatchers("/role/**").permitAll().antMatchers("/app/**")
+				.permitAll().antMatchers("/user/**").permitAll().antMatchers("/swagger-ui**").permitAll()
+				.antMatchers("/back/**").permitAll().antMatchers("/front/**").permitAll().antMatchers("/js/**")
+				.permitAll().antMatchers("/css/**")
+				// 兼容swagger
+				.permitAll().antMatchers("/webjars/**").permitAll().antMatchers("/swagger-resources").permitAll()
+				.antMatchers("/images/**").permitAll().antMatchers("/v2/api-docs").permitAll()
 				// 所有 /api/v1/login 的POST请求 都放行
 				.antMatchers(HttpMethod.POST, "/api/v1/login").permitAll()
 				// 权限检查
